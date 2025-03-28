@@ -29,8 +29,8 @@ const Index = () => {
       <main className="flex-grow py-6">
         <div className="container">
           <div className="py-4 text-center mb-6">
-            <h1 className="text-2xl font-bold text-nappy-pink mb-2">NappyClub Ассистент</h1>
-            <p className="text-sm text-gray-600">Ваш помощник для материнства и ухода за малышом</p>
+            <h1 className="text-2xl font-bold text-nappy-pink mb-2">Ассистент НэппиКлаб</h1>
+            <p className="text-sm text-gray-600">Твой персональный помощник на базе искусственного интеллекта</p>
           </div>
           
           <div className="grid grid-cols-2 gap-4">
