@@ -1,18 +1,16 @@
 
 import React from 'react';
+import nappyLogo from '/nappy-logo.svg';
 
 const Footer = () => {
   return (
-    <footer className="bg-nappy-pink-bg py-6 mt-6">
+    <footer className="bg-white py-4 mt-4 border-t border-nappy-pink-light/20">
       <div className="container">
         <div className="text-center">
-          <div className="flex justify-center items-center space-x-2 mb-3">
-            <div className="w-6 h-6 rounded-full bg-nappy-pink flex items-center justify-center">
-              <span className="text-white text-xs font-bold">N</span>
-            </div>
-            <h3 className="text-sm font-bold text-nappy-pink">NappyClub</h3>
+          <div className="flex justify-center items-center space-x-2 mb-2">
+            <img src={nappyLogo} alt="NappyClub" className="h-6" />
           </div>
-          <p className="text-xs text-gray-600 mb-4">
+          <p className="text-xs text-gray-500 mb-3">
             Заботимся о мамах и малышах вместе с вами
           </p>
           <div className="flex justify-center space-x-4">
@@ -30,7 +28,15 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-xs text-nappy-teal hover:underline"
             >
-              Отзывы и предложения
+              Отзывы
+            </a>
+            <a 
+              href="https://nappyclub.ru/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-xs text-nappy-teal hover:underline"
+            >
+              Магазин
             </a>
           </div>
         </div>
