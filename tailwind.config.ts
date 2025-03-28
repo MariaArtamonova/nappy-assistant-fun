@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,31 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// NappyClub brand colors
+				nappy: {
+					pink: {
+						DEFAULT: '#F27997',
+						light: '#F4A9BD',
+						bg: '#FDEBEF'
+					},
+					teal: {
+						DEFAULT: '#7CBCBE',
+						light: '#98D5D7',
+						bg: '#F0F9F9'
+					},
+					blue: {
+						DEFAULT: '#B1BCFE',
+						light: '#9BB8F9',
+						bg: '#E2E3FF'
+					},
+					green: {
+						DEFAULT: '#67C2BF'
+					},
+					yellow: {
+						DEFAULT: '#FFD278',
+						light: '#FFE4AD'
+					}
 				}
 			},
 			borderRadius: {
@@ -84,11 +110,16 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},
