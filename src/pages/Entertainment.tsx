@@ -5,8 +5,6 @@ import Section from '@/components/Section';
 import FeatureCard from '@/components/FeatureCard';
 import Footer from '@/components/Footer';
 import { SparkleIcon, MessageCircle, Baby, Image } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const Entertainment = () => {
   return (
@@ -40,14 +38,6 @@ const Entertainment = () => {
               icon={<Image size={18} className="text-nappy-teal" />}
               className="bg-white/90"
             />
-          </div>
-          
-          <div className="mt-6 flex justify-center">
-            <Link to="/">
-              <Button variant="outline" className="text-nappy-teal border-nappy-teal hover:bg-nappy-teal-bg/50">
-                Вернуться к меню
-              </Button>
-            </Link>
           </div>
         </Section>
       </main>

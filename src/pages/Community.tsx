@@ -4,8 +4,6 @@ import Header from '@/components/Header';
 import Section from '@/components/Section';
 import ChannelCard from '@/components/ChannelCard';
 import Footer from '@/components/Footer';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const Community = () => {
   return (
@@ -33,14 +31,6 @@ const Community = () => {
               link="https://t.me/nappyclub"
               color="blue"
             />
-          </div>
-          
-          <div className="mt-6 flex justify-center">
-            <Link to="/">
-              <Button variant="outline" className="text-nappy-blue border-nappy-blue hover:bg-nappy-blue-bg/50">
-                Вернуться к меню
-              </Button>
-            </Link>
           </div>
         </Section>
       </main>

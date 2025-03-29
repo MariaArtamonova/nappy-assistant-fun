@@ -4,8 +4,6 @@ import Header from '@/components/Header';
 import Section from '@/components/Section';
 import Footer from '@/components/Footer';
 import { HeartHandshake, MessageSquare } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const Support = () => {
   return (
@@ -44,14 +42,6 @@ const Support = () => {
               </div>
               <p className="text-xs text-gray-600">Поделитесь своим мнением о работе бота и предложите идеи для его улучшения.</p>
             </a>
-          </div>
-          
-          <div className="mt-6 flex justify-center">
-            <Link to="/">
-              <Button variant="outline" className="text-nappy-green border-nappy-green hover:bg-nappy-green/10">
-                Вернуться к меню
-              </Button>
-            </Link>
           </div>
         </Section>
       </main>

@@ -4,8 +4,6 @@ import Header from '@/components/Header';
 import Section from '@/components/Section';
 import SubscriptionCard from '@/components/SubscriptionCard';
 import Footer from '@/components/Footer';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const Subscription = () => {
   return (
@@ -40,14 +38,6 @@ const Subscription = () => {
             <p className="text-xs text-gray-700">
               Для управления подпиской, перейдите в бота и выберите "Профиль" → "Моя подписка" или "Купить подписку".
             </p>
-          </div>
-          
-          <div className="mt-6 flex justify-center">
-            <Link to="/">
-              <Button variant="outline" className="text-nappy-yellow border-nappy-yellow hover:bg-nappy-yellow-light/30">
-                Вернуться к меню
-              </Button>
-            </Link>
           </div>
         </Section>
       </main>
