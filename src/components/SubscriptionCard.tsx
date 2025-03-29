@@ -23,7 +23,7 @@ const SubscriptionCard = ({ title, isPremium, features }: SubscriptionCardProps)
       {isPremium && (
         <div className="mt-4">
           <a 
-            href="https://t.me/NappyClubBot?start=profile" 
+            href="https://t.me/NappyClubBot" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block w-full py-2 text-center bg-nappy-pink text-white rounded-lg hover:bg-nappy-pink/90 transition-colors"
