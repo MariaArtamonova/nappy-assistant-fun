@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Carousel, 
   CarouselContent, 
@@ -66,6 +66,8 @@ const plans = [
 ];
 
 const SubscriptionSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  
   return (
     <div className="relative mx-auto max-w-5xl px-4 py-2">
       <Carousel
@@ -73,32 +75,32 @@ const SubscriptionSlider = () => {
           align: "center",
           loop: true,
           skipSnaps: false,
-          dragFree: false,
+          containScroll: "trimSnaps",
         }}
         className="w-full"
+        onSelect={(api) => {
+          setActiveIndex(api.selectedScrollSnap());
+        }}
       >
         <CarouselContent className="-ml-3">
           {plans.map((plan, index) => (
             <CarouselItem 
               key={index} 
-              className="pl-3 basis-[80%] md:basis-[78%] first:pl-3"
+              className="pl-3 basis-[75%] md:basis-[75%] first:pl-3"
               style={{
                 transition: "transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease",
               }}
             >
               <div 
-                className={(api) => {
-                  const isActive = api?.selectedScrollSnap() === index;
-                  return `h-full rounded-xl p-5 border transition-all duration-300 ${
-                    plan.isPremium 
-                      ? 'bg-nappy-pink-bg border-nappy-pink' 
-                      : 'bg-white border-gray-200'
-                  } ${
-                    isActive 
-                      ? 'opacity-100 shadow-md scale-100' 
-                      : 'opacity-80 scale-95'
-                  }`;
-                }}
+                className={`h-full rounded-xl p-5 border transition-all duration-300 ${
+                  plan.isPremium 
+                    ? 'bg-nappy-pink-bg border-nappy-pink' 
+                    : 'bg-white border-gray-200'
+                } ${
+                  activeIndex === index 
+                    ? 'opacity-100 shadow-md' 
+                    : 'opacity-60'
+                }`}
               >
                 <h3 className={`text-lg font-bold mb-3 ${
                   plan.isPremium ? 'text-nappy-pink' : 'text-gray-700'
