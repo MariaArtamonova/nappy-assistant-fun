@@ -40,7 +40,10 @@ const Subscription = () => {
             </p>
           </div>
           
-          <div className="mt-6">
+          <div className="mt-8 mb-2">
+            <div className="text-center mb-2">
+              <p className="text-sm text-gray-500">Свайпни, чтобы увидеть больше тарифов</p>
+            </div>
             <SubscriptionSlider />
           </div>
         </Section>

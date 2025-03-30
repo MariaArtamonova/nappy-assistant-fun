@@ -3,9 +3,7 @@ import React from 'react';
 import { 
   Carousel, 
   CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
+  CarouselItem 
 } from "@/components/ui/carousel";
 import { Brain, Book, Sticker, Baby, Image, Key } from 'lucide-react';
 
@@ -69,49 +67,60 @@ const plans = [
 
 const SubscriptionSlider = () => {
   return (
-    <div className="relative mx-auto max-w-5xl px-8">
+    <div className="relative mx-auto max-w-5xl px-4 py-2">
       <Carousel
         opts={{
           align: "center",
-          containScroll: false,
           loop: true,
+          skipSnaps: false,
+          dragFree: false,
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-4">
+        <CarouselContent className="-ml-3">
           {plans.map((plan, index) => (
-            <CarouselItem key={index} className="pl-4 md:basis-2/3 lg:basis-2/3">
-              <div className={`h-full border rounded-xl p-5 transition-opacity duration-300 ${
-                plan.isPremium ? 'bg-nappy-pink-bg border-nappy-pink' : 'bg-white border-gray-200'
-              }`}>
-                <h3 className={`text-lg font-bold mb-3 ${
-                  plan.isPremium ? 'text-nappy-pink' : 'text-gray-700'
-                }`}>
-                  {plan.title}
-                  {!plan.isAdditional && <div className="text-sm font-normal mt-1">{plan.price}</div>}
-                </h3>
-                <ul className="space-y-2">
-                  {plan.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start">
-                      {item.icon && (
-                        <span className={`mt-0.5 mr-2 ${plan.isPremium ? 'text-nappy-pink' : 'text-nappy-teal'}`}>
-                          {item.icon}
-                        </span>
-                      )}
-                      <span className="text-sm">{item.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <CarouselItem 
+              key={index} 
+              className="pl-3 basis-[80%] md:basis-[78%] first:pl-3"
+              style={{
+                transition: "transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease",
+              }}
+            >
+              {({ isActive }) => (
+                <div 
+                  className={`h-full rounded-xl p-5 border transition-all duration-300 ${
+                    plan.isPremium 
+                      ? 'bg-nappy-pink-bg border-nappy-pink' 
+                      : 'bg-white border-gray-200'
+                  } ${
+                    isActive 
+                      ? 'opacity-100 shadow-md scale-100' 
+                      : 'opacity-80 scale-95'
+                  }`}
+                >
+                  <h3 className={`text-lg font-bold mb-3 ${
+                    plan.isPremium ? 'text-nappy-pink' : 'text-gray-700'
+                  }`}>
+                    {plan.title}
+                    {!plan.isAdditional && <div className="text-sm font-normal mt-1">{plan.price}</div>}
+                  </h3>
+                  <ul className="space-y-2">
+                    {plan.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start">
+                        {item.icon && (
+                          <span className={`mt-0.5 mr-2 ${plan.isPremium ? 'text-nappy-pink' : 'text-nappy-teal'}`}>
+                            {item.icon}
+                          </span>
+                        )}
+                        <span className="text-sm">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute -right-1 top-1/2 -translate-y-1/2 z-10">
-          <CarouselNext className="h-8 w-8 rounded-full" />
-        </div>
-        <div className="absolute -left-1 top-1/2 -translate-y-1/2 z-10">
-          <CarouselPrevious className="h-8 w-8 rounded-full" />
-        </div>
       </Carousel>
     </div>
   );
