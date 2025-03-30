@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 interface FeatureCardProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   icon?: React.ReactNode;
   className?: string;
   noHover?: boolean;
@@ -25,7 +25,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, cla
         )}
         <h3 className="font-medium text-nappy-teal">{title}</h3>
       </div>
-      <p className="text-xs text-gray-600">{description}</p>
+      <div className="text-xs text-gray-600">{description}</div>
     </div>
   );
 };

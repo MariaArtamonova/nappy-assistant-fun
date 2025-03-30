@@ -72,14 +72,15 @@ const SubscriptionSlider = () => {
     <div className="relative">
       <Carousel
         opts={{
-          align: "start",
+          align: "center",
+          containScroll: "trimSnaps",
           loop: true,
         }}
         className="w-full"
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-2 md:-ml-4">
           {plans.map((plan, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2.2">
               <div className={`h-full border rounded-xl p-5 ${
                 plan.isPremium ? 'bg-nappy-pink-bg border-nappy-pink' : 'bg-white border-gray-200'
               }`}>
