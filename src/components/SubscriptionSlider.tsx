@@ -69,19 +69,19 @@ const plans = [
 
 const SubscriptionSlider = () => {
   return (
-    <div className="relative">
+    <div className="relative mx-auto max-w-5xl px-8">
       <Carousel
         opts={{
           align: "center",
-          containScroll: "trimSnaps",
+          containScroll: false,
           loop: true,
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
+        <CarouselContent className="-ml-4">
           {plans.map((plan, index) => (
-            <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2.2">
-              <div className={`h-full border rounded-xl p-5 ${
+            <CarouselItem key={index} className="pl-4 md:basis-2/3 lg:basis-2/3">
+              <div className={`h-full border rounded-xl p-5 transition-opacity duration-300 ${
                 plan.isPremium ? 'bg-nappy-pink-bg border-nappy-pink' : 'bg-white border-gray-200'
               }`}>
                 <h3 className={`text-lg font-bold mb-3 ${
@@ -106,11 +106,11 @@ const SubscriptionSlider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute -right-5 top-1/2 -translate-y-1/2">
-          <CarouselNext />
+        <div className="absolute -right-1 top-1/2 -translate-y-1/2 z-10">
+          <CarouselNext className="h-8 w-8 rounded-full" />
         </div>
-        <div className="absolute -left-5 top-1/2 -translate-y-1/2">
-          <CarouselPrevious />
+        <div className="absolute -left-1 top-1/2 -translate-y-1/2 z-10">
+          <CarouselPrevious className="h-8 w-8 rounded-full" />
         </div>
       </Carousel>
     </div>
