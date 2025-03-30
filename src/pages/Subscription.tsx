@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Section from '@/components/Section';
 import SubscriptionCard from '@/components/SubscriptionCard';
 import Footer from '@/components/Footer';
+import SubscriptionSlider from '@/components/SubscriptionSlider';
 
 const Subscription = () => {
   return (
@@ -29,7 +30,6 @@ const Subscription = () => {
               features={[
                 "Платный",
                 "Большое количество запросов",
-                "Приоритетная обработка",
                 "Полный доступ ко всем функциям"
               ]}
             />
@@ -38,6 +38,10 @@ const Subscription = () => {
             <p className="text-xs text-gray-700">
               Для управления подпиской, перейдите в бота и выберите "Профиль" → "Моя подписка" или "Купить подписку".
             </p>
+          </div>
+          
+          <div className="mt-6">
+            <SubscriptionSlider />
           </div>
         </Section>
       </main>
