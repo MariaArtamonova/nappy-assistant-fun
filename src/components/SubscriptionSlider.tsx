@@ -86,9 +86,10 @@ const SubscriptionSlider = () => {
                 transition: "transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease",
               }}
             >
-              {({ isActive }) => (
-                <div 
-                  className={`h-full rounded-xl p-5 border transition-all duration-300 ${
+              <div 
+                className={(api) => {
+                  const isActive = api?.selectedScrollSnap() === index;
+                  return `h-full rounded-xl p-5 border transition-all duration-300 ${
                     plan.isPremium 
                       ? 'bg-nappy-pink-bg border-nappy-pink' 
                       : 'bg-white border-gray-200'
@@ -96,28 +97,28 @@ const SubscriptionSlider = () => {
                     isActive 
                       ? 'opacity-100 shadow-md scale-100' 
                       : 'opacity-80 scale-95'
-                  }`}
-                >
-                  <h3 className={`text-lg font-bold mb-3 ${
-                    plan.isPremium ? 'text-nappy-pink' : 'text-gray-700'
-                  }`}>
-                    {plan.title}
-                    {!plan.isAdditional && <div className="text-sm font-normal mt-1">{plan.price}</div>}
-                  </h3>
-                  <ul className="space-y-2">
-                    {plan.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        {item.icon && (
-                          <span className={`mt-0.5 mr-2 ${plan.isPremium ? 'text-nappy-pink' : 'text-nappy-teal'}`}>
-                            {item.icon}
-                          </span>
-                        )}
-                        <span className="text-sm">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                  }`;
+                }}
+              >
+                <h3 className={`text-lg font-bold mb-3 ${
+                  plan.isPremium ? 'text-nappy-pink' : 'text-gray-700'
+                }`}>
+                  {plan.title}
+                  {!plan.isAdditional && <div className="text-sm font-normal mt-1">{plan.price}</div>}
+                </h3>
+                <ul className="space-y-2">
+                  {plan.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start">
+                      {item.icon && (
+                        <span className={`mt-0.5 mr-2 ${plan.isPremium ? 'text-nappy-pink' : 'text-nappy-teal'}`}>
+                          {item.icon}
+                        </span>
+                      )}
+                      <span className="text-sm">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
