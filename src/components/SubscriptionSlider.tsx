@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Carousel, 
   CarouselContent, 
@@ -79,7 +79,9 @@ const SubscriptionSlider = () => {
         }}
         className="w-full"
         onSelect={(api) => {
-          setActiveIndex(api.selectedScrollSnap());
+          if (api) {
+            setActiveIndex(api.selectedScrollSnap());
+          }
         }}
       >
         <CarouselContent className="-ml-3">
