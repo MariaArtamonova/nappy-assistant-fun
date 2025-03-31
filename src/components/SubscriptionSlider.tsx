@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { 
   Carousel, 
   CarouselContent, 
@@ -67,6 +67,24 @@ const plans = [
 
 const SubscriptionSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<any>(null);
+  
+  useEffect(() => {
+    if (!carouselApi) return;
+    
+    const onSelect = () => {
+      setActiveIndex(carouselApi.selectedScrollSnap());
+    };
+    
+    carouselApi.on("select", onSelect);
+    
+    // Initialize active index
+    setActiveIndex(carouselApi.selectedScrollSnap());
+    
+    return () => {
+      carouselApi.off("select", onSelect);
+    };
+  }, [carouselApi]);
   
   return (
     <div className="relative mx-auto max-w-5xl px-4 py-2">
@@ -78,11 +96,7 @@ const SubscriptionSlider = () => {
           containScroll: "trimSnaps",
         }}
         className="w-full"
-        onSelect={(api) => {
-          if (api) {
-            setActiveIndex(api.selectedScrollSnap());
-          }
-        }}
+        setApi={setCarouselApi}
       >
         <CarouselContent className="-ml-3">
           {plans.map((plan, index) => (
