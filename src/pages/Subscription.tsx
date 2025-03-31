@@ -40,7 +40,7 @@ const Subscription = () => {
             </p>
           </div>
           
-          <div className="mt-8 mb-2">
+          <div className="mt-8 mb-2 -mx-4">
             <SubscriptionSlider />
           </div>
         </Section>

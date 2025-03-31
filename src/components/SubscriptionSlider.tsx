@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Carousel, 
   CarouselContent, 
@@ -87,7 +87,7 @@ const SubscriptionSlider = () => {
   }, [carouselApi]);
   
   return (
-    <div className="relative mx-auto max-w-5xl px-4 py-2">
+    <div className="relative mx-auto max-w-full">
       <Carousel
         opts={{
           align: "center",
@@ -98,24 +98,21 @@ const SubscriptionSlider = () => {
         className="w-full"
         setApi={setCarouselApi}
       >
-        <CarouselContent className="-ml-3">
+        <CarouselContent className="-ml-2 md:-ml-4">
           {plans.map((plan, index) => (
             <CarouselItem 
               key={index} 
-              className="pl-3 basis-[75%] md:basis-[75%] first:pl-3"
-              style={{
-                transition: "transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease",
-              }}
+              className="pl-2 md:pl-4 basis-[60%] md:basis-[50%] first:pl-2 md:first:pl-4"
             >
               <div 
-                className={`h-full rounded-xl p-5 border transition-all duration-300 ${
+                className={`h-full rounded-xl p-5 border shadow-sm transition-all duration-300 ${
                   plan.isPremium 
                     ? 'bg-nappy-pink-bg border-nappy-pink' 
                     : 'bg-white border-gray-200'
                 } ${
                   activeIndex === index 
-                    ? 'opacity-100 shadow-md' 
-                    : 'opacity-60'
+                    ? 'opacity-100 shadow-md scale-100' 
+                    : 'opacity-60 scale-95'
                 }`}
               >
                 <h3 className={`text-lg font-bold mb-3 ${
