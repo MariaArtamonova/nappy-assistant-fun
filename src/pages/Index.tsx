@@ -1,81 +1,114 @@
 
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Brain, Sparkles, Users, CreditCard, HeartHandshake } from 'lucide-react';
-
-const MenuCard = ({ to, icon, title, color, bgColor }) => {
-  return (
-    <Link to={to} className={cn(
-      "flex flex-col items-center justify-center p-4 rounded-xl transition-all",
-      "hover:shadow-md border border-gray-100",
-      bgColor
-    )}>
-      <div className={cn("p-3 rounded-full mb-2", color)}>
-        {icon}
-      </div>
-      <span className="text-sm font-medium">{title}</span>
-    </Link>
-  );
-};
+import { 
+  Brain, 
+  SparkleIcon, 
+  MessageCircle, 
+  Baby, 
+  Image, 
+  HelpCircle, 
+  CreditCard,
+  HeartHandshake,
+  Users,
+  MessagesSquare,
+  MessageSquare
+} from 'lucide-react';
+import LogoSlider from '@/components/LogoSlider';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <Header />
-      
-      <main className="flex-grow py-6">
-        <div className="container">
-          <div className="py-4 text-center mb-6">
-            <h1 className="text-2xl font-bold text-nappy-pink mb-2">Ассистент НэппиКлаб</h1>
-            <p className="text-sm text-gray-600">Твой персональный помощник на базе искусственного интеллекта</p>
+    <div className="min-h-screen flex flex-col bg-black text-white">
+      <div className="container mx-auto p-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-h-screen">
+          {/* Top Left - Logo and Title */}
+          <div className="md:col-span-2 flex flex-col mb-4">
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/nappy-logo.svg" alt="NappyClub" className="w-16 h-16" />
+              <div>
+                <h1 className="text-xl font-bold text-white">Ассистент НэппиКлаб</h1>
+                <p className="text-sm text-gray-300">Твой персональный помощник на базе искусственного интеллекта</p>
+              </div>
+            </div>
+            
+            {/* Bottom Left - Slider */}
+            <div className="flex-grow mt-2">
+              <LogoSlider />
+            </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
-            <MenuCard 
-              to="/assistant" 
-              icon={<Brain size={24} className="text-nappy-pink" />} 
-              title="Ассистент" 
-              color="bg-nappy-pink-bg" 
-              bgColor="bg-white"
-            />
-            <MenuCard 
-              to="/entertainment" 
-              icon={<Sparkles size={24} className="text-nappy-teal" />} 
-              title="Развлечения" 
-              color="bg-nappy-teal-bg" 
-              bgColor="bg-white"
-            />
-            <MenuCard 
-              to="/community" 
-              icon={<Users size={24} className="text-nappy-blue" />} 
-              title="Каналы" 
-              color="bg-nappy-blue-bg" 
-              bgColor="bg-white"
-            />
-            <MenuCard 
-              to="/subscription" 
-              icon={<CreditCard size={24} className="text-nappy-yellow" />} 
-              title="Подписка" 
-              color="bg-nappy-yellow-light/30" 
-              bgColor="bg-white"
-            />
-            <div className="col-span-2">
-              <MenuCard 
-                to="/support" 
-                icon={<HeartHandshake size={24} className="text-nappy-green" />} 
-                title="Поддержка" 
-                color="bg-nappy-green/10" 
-                bgColor="bg-white"
-              />
+          {/* Right Side */}
+          <div className="flex flex-col">
+            {/* Top Right - Navigation Buttons */}
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              <Link to="/assistant" className="bg-zinc-800 rounded-xl p-3 text-center hover:bg-zinc-700 transition-colors">
+                <HelpCircle size={20} className="mx-auto mb-1 text-purple-400" />
+                <span className="text-sm">FAQ</span>
+              </Link>
+              <Link to="/subscription" className="bg-zinc-800 rounded-xl p-3 text-center hover:bg-zinc-700 transition-colors">
+                <CreditCard size={20} className="mx-auto mb-1 text-purple-400" />
+                <span className="text-sm">Подписка</span>
+              </Link>
+              <Link to="/support" className="col-span-2 bg-zinc-800 rounded-xl p-3 text-center hover:bg-zinc-700 transition-colors">
+                <HeartHandshake size={20} className="mx-auto mb-1 text-purple-400" />
+                <span className="text-sm">Поддержка</span>
+              </Link>
+            </div>
+            
+            {/* Bottom Right - Community Links */}
+            <div className="flex-grow space-y-3">
+              <a 
+                href="https://t.me/NappyClub_bot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block p-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 transition-colors"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-medium">ПОМОЩЬ</p>
+                    <p className="text-sm font-medium">ПОДДЕРЖКА</p>
+                    <p className="text-sm font-medium">ОБЩЕНИЕ</p>
+                  </div>
+                  <MessageCircle size={20} className="text-blue-400" />
+                </div>
+              </a>
+              
+              <a 
+                href="https://t.me/nappyclubforum" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block p-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 transition-colors"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-medium">ГАЙДЫ</p>
+                    <p className="text-sm font-medium">ИНСАЙДЫ</p>
+                    <p className="text-sm font-medium">НОВОСТИ</p>
+                  </div>
+                  <Users size={20} className="text-gray-400" />
+                </div>
+              </a>
+              
+              <a 
+                href="https://t.me/nappymoms" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block p-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 transition-colors"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-medium">ТРЕНДЫ</p>
+                    <p className="text-sm font-medium">ЛАЙФХАКИ</p>
+                    <p className="text-sm font-medium">НОВИНКИ</p>
+                  </div>
+                  <MessageSquare size={20} className="text-pink-400" />
+                </div>
+              </a>
             </div>
           </div>
         </div>
-      </main>
-      
-      <Footer />
+      </div>
     </div>
   );
 };
