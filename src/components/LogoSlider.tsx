@@ -18,36 +18,36 @@ const slides = [
     title: "Ассистент НэппиКлаб",
     description: "Твой персональный помощник на базе искусственного интеллекта",
     icon: <Brain size={24} className="text-white" />,
-    bgColor: "bg-gradient-to-br from-purple-400 to-pink-300",
-    image: "/lovable-uploads/bf804a36-25e4-4364-8580-ce88bf515aac.png"
+    bgColor: "bg-gradient-to-br from-purple-900 to-purple-700",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800"
   },
   {
     title: "Придумать сказку",
     description: "Создавай интересные персонализированные сказки с картинками, чтобы увлечь и успокоить даже самого активного малыша.",
     icon: <SparkleIcon size={24} className="text-white" />,
-    bgColor: "bg-gradient-to-br from-green-300 to-blue-200",
-    image: "/lovable-uploads/2e30b78b-fd3f-4cdf-a5f6-5dec5c9534e8.png"
+    bgColor: "bg-gradient-to-br from-indigo-900 to-indigo-700",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800"
   },
   {
     title: "Стикеры для Telegram",
     description: "Классные, яркие стикеры с изображением вашего малыша - для весёлого общения с подругами и близкими",
     icon: <MessageCircle size={24} className="text-white" />,
-    bgColor: "bg-gradient-to-br from-blue-300 to-purple-200",
-    image: "/lovable-uploads/c263116b-5c84-44f6-b689-7961453b9658.png"
+    bgColor: "bg-gradient-to-br from-blue-900 to-blue-700",
+    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800"
   },
   {
     title: "Как будет выглядеть ваш малыш?",
     description: "Если ты планируешь малыша и сгораешь от любопытства, каким он будет — можно подсмотреть)",
     icon: <Baby size={24} className="text-white" />,
-    bgColor: "bg-gradient-to-br from-pink-400 to-orange-200",
-    image: "/lovable-uploads/509f2777-807f-427d-bc77-fbfc1f19b44d.png"
+    bgColor: "bg-gradient-to-br from-pink-900 to-pink-700",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800"
   },
   {
     title: "Обработка фотографий",
     description: "Обрабатывай фотографии без сторонних сервисов прямо в боте и радуй себя, друзей и близких.",
     icon: <ImageIcon size={24} className="text-white" />,
-    bgColor: "bg-gradient-to-br from-yellow-300 to-orange-200",
-    image: "/lovable-uploads/ae9ce516-6441-4ea9-a423-cc9cf03ef0ca.png"
+    bgColor: "bg-gradient-to-br from-teal-900 to-teal-700",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800"
   }
 ];
 
@@ -118,18 +118,18 @@ const LogoSlider = () => {
             <CarouselItem key={index} className="pl-2 h-full basis-full">
               <div className={`relative h-full rounded-xl overflow-hidden ${slide.bgColor}`}>
                 {/* Semi-transparent overlay */}
-                <div className="absolute inset-0 bg-white opacity-20"></div>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
                 
                 {/* Background image */}
                 <img 
                   src={slide.image} 
                   alt={slide.title} 
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
+                  className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
                 />
                 
                 <div className="relative h-full flex flex-col justify-between p-6 z-10">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-full bg-white/30">
+                    <div className="p-2 rounded-full bg-black/30">
                       {slide.icon}
                     </div>
                     <h3 className="text-lg font-bold text-white">{slide.title}</h3>
