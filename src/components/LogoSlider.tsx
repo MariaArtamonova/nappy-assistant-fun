@@ -26,7 +26,7 @@ const slides = [
     description: "Создавай интересные персонализированные сказки с картинками, чтобы увлечь и успокоить даже самого активного малыша.",
     icon: <SparkleIcon size={24} className="text-white" />,
     bgColor: "bg-gradient-to-br from-green-300 to-blue-200",
-    image: "/lovable-uploads/30e407b2-45b5-4d33-a67a-619f1b214df2.png"
+    image: "/lovable-uploads/2e30b78b-fd3f-4cdf-a5f6-5dec5c9534e8.png"
   },
   {
     title: "Стикеры для Telegram",
@@ -47,7 +47,7 @@ const slides = [
     description: "Обрабатывай фотографии без сторонних сервисов прямо в боте и радуй себя, друзей и близких.",
     icon: <ImageIcon size={24} className="text-white" />,
     bgColor: "bg-gradient-to-br from-yellow-300 to-orange-200",
-    image: "/lovable-uploads/bf804a36-25e4-4364-8580-ce88bf515aac.png"
+    image: "/lovable-uploads/ae9ce516-6441-4ea9-a423-cc9cf03ef0ca.png"
   }
 ];
 
