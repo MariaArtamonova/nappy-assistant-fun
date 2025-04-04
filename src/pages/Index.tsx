@@ -21,18 +21,17 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-h-screen">
-          {/* Left side - Slider */}
-          <div className="md:col-span-2 flex flex-col mb-4">
-            <div className="flex-grow mt-2">
-              <LogoSlider />
-            </div>
-          </div>
-          
+        {/* Title Section */}
+        <div className="mb-4">
+          <h1 className="text-xl font-bold text-white">Ассистент НэппиКлаб</h1>
+          <p className="text-sm text-gray-300">Твой персональный помощник на базе искусственного интеллекта</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Right Side */}
-          <div className="flex flex-col">
-            {/* Top Right - Navigation Buttons */}
-            <div className="grid grid-cols-2 gap-2 mb-4">
+          <div className="md:col-span-2 flex flex-col space-y-4">
+            {/* Navigation Buttons */}
+            <div className="grid grid-cols-2 gap-2 mb-2">
               <Link to="/assistant" className="bg-zinc-800 rounded-xl p-3 text-center hover:bg-zinc-700 transition-colors">
                 <HelpCircle size={20} className="mx-auto mb-1 text-purple-400" />
                 <span className="text-sm">FAQ</span>
@@ -47,8 +46,8 @@ const Index = () => {
               </Link>
             </div>
             
-            {/* Bottom Right - Community Links */}
-            <div className="flex-grow space-y-3">
+            {/* Community Links */}
+            <div className="space-y-3">
               <a 
                 href="https://t.me/NappyClub_bot" 
                 target="_blank" 
@@ -97,6 +96,11 @@ const Index = () => {
                 </div>
               </a>
             </div>
+          </div>
+          
+          {/* Left side - Vertical Slider */}
+          <div className="md:order-first mt-4 md:mt-0">
+            <LogoSlider />
           </div>
         </div>
       </div>
