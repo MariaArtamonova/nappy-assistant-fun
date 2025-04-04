@@ -22,17 +22,8 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-black text-white">
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 min-h-screen">
-          {/* Top Left - Logo and Title */}
+          {/* Left side - Slider */}
           <div className="md:col-span-2 flex flex-col mb-4">
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/nappy-logo.svg" alt="NappyClub" className="w-16 h-16" />
-              <div>
-                <h1 className="text-xl font-bold text-white">Ассистент НэппиКлаб</h1>
-                <p className="text-sm text-gray-300">Твой персональный помощник на базе искусственного интеллекта</p>
-              </div>
-            </div>
-            
-            {/* Bottom Left - Slider */}
             <div className="flex-grow mt-2">
               <LogoSlider />
             </div>
@@ -70,7 +61,7 @@ const Index = () => {
                     <p className="text-sm font-medium">ПОДДЕРЖКА</p>
                     <p className="text-sm font-medium">ОБЩЕНИЕ</p>
                   </div>
-                  <MessageCircle size={20} className="text-blue-400" />
+                  <MessageCircle size={20} className="text-blue-400 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
                 </div>
               </a>
               
@@ -86,7 +77,7 @@ const Index = () => {
                     <p className="text-sm font-medium">ИНСАЙДЫ</p>
                     <p className="text-sm font-medium">НОВОСТИ</p>
                   </div>
-                  <Users size={20} className="text-gray-400" />
+                  <Users size={20} className="text-gray-400 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
                 </div>
               </a>
               
@@ -102,7 +93,7 @@ const Index = () => {
                     <p className="text-sm font-medium">ЛАЙФХАКИ</p>
                     <p className="text-sm font-medium">НОВИНКИ</p>
                   </div>
-                  <MessageSquare size={20} className="text-pink-400" />
+                  <MessageSquare size={20} className="text-pink-400 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
                 </div>
               </a>
             </div>

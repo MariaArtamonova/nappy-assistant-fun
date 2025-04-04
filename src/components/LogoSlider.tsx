@@ -26,7 +26,7 @@ const slides = [
     description: "Создавай интересные персонализированные сказки с картинками, чтобы увлечь и успокоить даже самого активного малыша.",
     icon: <SparkleIcon size={24} className="text-white" />,
     bgColor: "bg-gradient-to-br from-indigo-900 to-indigo-700",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800"
+    image: "/lovable-uploads/c7f748d9-c4e1-4e1e-884d-616a266428e5.png"
   },
   {
     title: "Стикеры для Telegram",
@@ -125,6 +125,7 @@ const LogoSlider = () => {
                   src={slide.image} 
                   alt={slide.title} 
                   className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+                  style={{ objectPosition: index === 1 ? "center" : "center" }} // Adjust the fairy tale image position
                 />
                 
                 <div className="relative h-full flex flex-col justify-between p-6 z-10">
